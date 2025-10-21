@@ -1,26 +1,29 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import BotCollection from "./BotCollection";
 
 function App() {
-  const [bots, setBots] = useState([]); // always starts as an empty array
+  const [bots, setBots] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:8001/bots")
       .then((res) => res.json())
       .then((data) => {
-        // check if data has bots inside or not
-        if (data.bots) {
+        // 👇 If data is an object with a "bots" key, use that.
+        if (Array.isArray(data)) {
+          setBots(data);
+        } else if (data.bots && Array.isArray(data.bots)) {
           setBots(data.bots);
         } else {
-          setBots(data);
+          console.error("Unexpected data format:", data);
+          setBots([]); // fallback to empty
         }
       })
-      .catch((error) => console.error("Error fetching bots:", error));
+      .catch((err) => console.error("Fetch error:", err));
   }, []);
 
   return (
     <div>
-      <h1>My Bot Army</h1>
+      <h1>choose your warrior</h1>
       <BotCollection bots={bots} />
     </div>
   );
