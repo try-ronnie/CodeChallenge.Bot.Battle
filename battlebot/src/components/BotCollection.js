@@ -1,15 +1,19 @@
 import React from "react";
 
 function BotCollection({ bots }) {
+  if (!Array.isArray(bots)) {
+    return <p>Loading bots...</p>;
+  }
+
   return (
     <div>
       {bots.length === 0 ? (
-        <p>Loading bots...</p>
+        <p>No bots found...</p>
       ) : (
         bots.map((bot) => (
           <div key={bot.id}>
             <h3>{bot.name}</h3>
-            <p>{bot.health}</p>
+            <p>Health: {bot.health}</p>
           </div>
         ))
       )}
