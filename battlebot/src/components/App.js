@@ -8,23 +8,20 @@ function App() {
     fetch("http://localhost:8001/bots")
       .then((res) => res.json())
       .then((data) => {
-        // 👇 If data is an object with a "bots" key, use that.
-        if (Array.isArray(data)) {
-          setBots(data);
-        } else if (data.bots && Array.isArray(data.bots)) {
-          setBots(data.bots);
-        } else {
-          console.error("Unexpected data format:", data);
-          setBots([]); // fallback to empty
-        }
+        console.log("Fetched bots:", data);
+        setBots(data);
       })
-      .catch((err) => console.error("Fetch error:", err));
+      .catch((err) => console.error("Error fetching bots:", err));
   }, []);
 
   return (
-    <div>
-      <h1>choose your warrior</h1>
-      <BotCollection bots={bots} />
+    <div className="App">
+      <h1>Choose your warrior</h1>
+      {bots.length > 0 ? (
+        <BotCollection bots={bots} />
+      ) : (
+        <p>No bots found...</p>
+      )}
     </div>
   );
 }
