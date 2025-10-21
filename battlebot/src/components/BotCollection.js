@@ -1,21 +1,18 @@
-import BotCard from "./BotCard";
+import React from "react";
 
-function BotCollection({ bots, army, setArmy }) {
-  function handleAddBot(bot) {
-    // Only add if it's not already in the army
-    if (!army.find((b) => b.id === bot.id)) {
-      setArmy([...army, bot]);
-    }
-  }
-
+function BotCollection({ bots }) {
   return (
     <div>
-      <h2>All Bots</h2>
-      <div className="bot-collection">
-        {bots.map((bot) => (
-          <BotCard key={bot.id} bot={bot} onClick={() => handleAddBot(bot)} />
-        ))}
-      </div>
+      {bots.length === 0 ? (
+        <p>Loading bots...</p>
+      ) : (
+        bots.map((bot) => (
+          <div key={bot.id}>
+            <h3>{bot.name}</h3>
+            <p>{bot.health}</p>
+          </div>
+        ))
+      )}
     </div>
   );
 }
