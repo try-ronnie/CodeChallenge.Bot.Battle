@@ -20,6 +20,13 @@ function App (){
 
 
   return (
-    <div
+    <div className="App">
+<h1>Choose your warrior</h1>
+{bots.length > 0 ? (
+<BotCollection bots={bots} />
+) : (
+<p>No bots found...</p>
+)}
+</div>
   )
 }
