@@ -15,5 +15,11 @@ function App (){
       console.log("bot data fetched :" , data)
       setBots(data)
     })
-  ))
+    .catch((err)=>console.error("error getting bots "))
+  ) ,[])
+
+
+  return (
+    <div
+  )
 }
