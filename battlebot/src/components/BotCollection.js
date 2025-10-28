@@ -4,6 +4,10 @@ import "./BotCollection.css"; // we’ll create this next
 
 function BotCollection({ bots }) {
   return (
+    //so here is where map over db.json values
+    // this means that every time an object is counted it prints  out the values in the object of 1 bot
+    //this means the image and everything that follows up
+    
     <div className="bot-container">
       {bots.map((bot) => (
         <div key={bot.id} className="bot-card">

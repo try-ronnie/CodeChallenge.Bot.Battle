@@ -11,3 +11,13 @@ onClick={(e) => {
 e.stopPropagation();
 onDelete(bot);
 }}
+style={{ color: "red" }}
+>
+X
+</button>
+)}
+</div>
+);
+}
+
+export default BotCard;
