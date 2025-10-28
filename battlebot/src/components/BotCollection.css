@@ -1,47 +1,59 @@
-.bot-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+body {
+  background: #0f0f0f;
+  color: #f0f0f0;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
   padding: 20px;
-  background-color: #0d0d0d;
+}
+
+.section {
+  margin: 30px 0;
+}
+
+.bot-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
 }
 
 .bot-card {
-  background-color: #1a1a1a;
-  color: #f0f0f0;
-  border-radius: 12px;
-  text-align: center;
+  background: #1e1e1e;
+  border-radius: 15px;
   padding: 15px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 180px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
 }
 
 .bot-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+  background: #292929;
+  box-shadow: 0 0 10px #4affff;
 }
 
 .bot-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.bot-name {
-  font-size: 1.3rem;
-  margin: 10px 0 5px;
-}
-
-.bot-class {
-  color: #999;
-  font-style: italic;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #4affff;
   margin-bottom: 10px;
 }
 
-.bot-quote {
-  display: block;
-  margin-top: 8px;
-  color: #ccc;
-  font-size: 0.9rem;
+.selected {
+  border: 2px solid #ff4444;
+  box-shadow: 0 0 10px #ff4444;
+}
+
+.empty-text {
+  font-style: italic;
+  color: #aaa;
 }

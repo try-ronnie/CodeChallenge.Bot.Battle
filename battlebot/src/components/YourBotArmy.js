@@ -1,30 +1,28 @@
-import BotCard from "./BotCard";
 
-function YourBotArmy({ army, setArmy }) {
-  // Remove a bot from the army
-  function handleRelease(bot) {
-    setArmy(army.filter((b) => b.id !== bot.id));
-  }
+import React from "react";
 
-  // Delete bot permanently (from backend + army)
-  function handleDischarge(bot) {
-    fetch(`http://localhost:8001/bots/${bot.id}`, { method: "DELETE" })
-      .then(() => setArmy(army.filter((b) => b.id !== bot.id)));
-  }
-
+function YourBotArmy({ army, handleRemoveBot }) {
   return (
-    <div>
+    <div className="section">
       <h2>Your Bot Army</h2>
-      <div className="bot-army">
-        {army.map((bot) => (
-          <BotCard
-            key={bot.id}
-            bot={bot}
-            onClick={() => handleRelease(bot)}
-            onDelete={() => handleDischarge(bot)}
-          />
-        ))}
-      </div>
+      {army.length === 0 ? (
+        <p className="empty-text">No bots selected yet...</p>
+      ) : (
+        <div className="bot-container">
+          {army.map((bot) => (
+            <div
+              key={bot.id}
+              className="bot-card selected"
+              onClick={() => handleRemoveBot(bot)} // ✅ remove on click
+            >
+              <img src={bot.avatar_url} alt={bot.name} className="bot-image" />
+              <h3>{bot.name}</h3>
+              <p>{bot.bot_class}</p>
+              <p>❤️ {bot.health} | ⚔️ {bot.damage} | 🛡️ {bot.armor}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
