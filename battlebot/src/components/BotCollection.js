@@ -16,7 +16,7 @@ function BotCollection({ bots, handleAddBot }) {
             <img src={bot.avatar_url} alt={bot.name} className="bot-image" />
             <h3>{bot.name}</h3>
             <p>{bot.bot_class}</p>
-            <p>❤️ {bot.health} | ⚔️ {bot.damage} | 🛡️ {bot.armor}</p>
+            <p> {bot.health} | {bot.damage} |  {bot.armor}</p>
           </div>
         ))}
       </div>

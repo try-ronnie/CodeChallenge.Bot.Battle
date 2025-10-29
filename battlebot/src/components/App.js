@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>🤖 Bot Battlr</h1>
+      <h1>Bot Battlr - war of the terminators</h1>
 
       {/* Your army section */}
       <YourBotArmy army={army} handleRemoveBot={handleRemoveBot} />
