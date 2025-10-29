@@ -5,8 +5,7 @@ The data comes from a local `db.json` served using JSON Server.
 
  Setup Instructions
 
-1. Install dependencies
-   npm install
+1. Installed dependencies already come with npx create react app
 
 2. Start JSON Server
    Make sure that when you start you run the dn.json server in the terminal:
