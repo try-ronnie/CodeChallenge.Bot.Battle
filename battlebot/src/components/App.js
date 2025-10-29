@@ -33,6 +33,8 @@ function App() {
   return (
     <div className="App">
       <h1>Bot Battlr - war of the terminators</h1>
+      <h2>YOU ARE REQUIRED TO PICK A BOT AND CREATE AN ARMY ACCORDING TO THE STATS YOU REQUIRE</h2>
+      <h1>BY :CHUMBA TACK TICKS</h1>
 
       {/* Your army section */}
       <YourBotArmy army={army} handleRemoveBot={handleRemoveBot} />
