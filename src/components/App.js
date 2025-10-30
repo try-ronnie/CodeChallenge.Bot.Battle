@@ -10,7 +10,7 @@ function App() {
 
   //  Fetch bots from JSON server
   useEffect(() => {
-    fetch("https://json-server-vercel-nine-orcin.vercel.app/bots")
+    fetch("https://json-server-vercel-4d62.vercel.app/bots")
       .then((res) => res.json())
       .then((data) => setBots(data))
       .catch((err) => console.error("Error fetching bots:", err));
@@ -41,4 +41,5 @@ function App() {
   );
 }
 
-export default App;
+export default App; 
+
