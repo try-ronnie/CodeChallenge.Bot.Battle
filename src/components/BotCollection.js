@@ -11,7 +11,7 @@ function BotCollection({ bots, handleAddBot }) {
           <div
             key={bot.id}
             className="bot-card"
-            onClick={() => handleAddBot(bot)} // ✅ add bot on click
+            onClick={() => handleAddBot(bot)} // add bot on click
           >
             <img src={bot.avatar_url} alt={bot.name} className="bot-image" />
             <h3>{bot.name}</h3>

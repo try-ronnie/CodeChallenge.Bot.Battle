@@ -1,59 +1,58 @@
-body {
-  background: #0f0f0f;
-  color: #f0f0f0;
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.App {
-  text-align: center;
-  padding: 20px;
-}
-
-.section {
-  margin: 30px 0;
-}
-
 .bot-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 18px;
   padding: 10px;
 }
 
 .bot-card {
-  background: #1e1e1e;
-  border-radius: 15px;
+  background: #1c1c1c;
+  border-radius: 12px;
   padding: 15px;
-  width: 180px;
+  width: 170px;
   text-align: center;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+  transition: 0.25s ease;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.05);
 }
 
 .bot-card:hover {
-  transform: translateY(-5px);
-  background: #292929;
-  box-shadow: 0 0 10px #4affff;
+  background: #262626;
+  transform: translateY(-4px);
+  box-shadow: 0 0 8px rgba(74, 255, 255, 0.2);
 }
 
 .bot-image {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   border: 2px solid #4affff;
   margin-bottom: 10px;
+  object-fit: cover;
 }
 
-.selected {
-  border: 2px solid #ff4444;
-  box-shadow: 0 0 10px #ff4444;
+.bot-card h3 {
+  margin: 6px 0 2px;
+  color: #f5f5f5;
+  font-size: 1rem;
 }
 
-.empty-text {
-  font-style: italic;
-  color: #aaa;
+.bot-card p {
+  margin: 2px 0;
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+.bot-card.selected {
+  border: 1px solid #ff4444;
+  box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
+  background: #202020;
+}
+
+.bot-stats {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.85rem;
+  color: #ddd;
 }
